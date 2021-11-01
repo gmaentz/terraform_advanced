@@ -32,7 +32,7 @@ Now that we have our state stored in Terraform Cloud in our workspace, we will t
     - Lastly, before saving, you must select the radial button that says `HCL` so that TFC knows how to properly interpolate the value of this variable
       - ![hcl variable](img/hclVariable.png)
 - After you've done all of this, your variables should look something like this:
-  ![](img/Screen_Shot_2021-08-24_at_1.36.22_PM.png)
+  ![](img/tfc_variables.png)
 
 ### Step 13.1.3 - Comment out your variables in `terraform.tfvars`
 
