@@ -38,7 +38,7 @@ In your local repository copy the contents of the `server` folder to the `terraf
 
 ```
 cd /workstation/terraform
-cp -r ./server/* ./terraform-aws-server
+sudo cp -r ./server/* ./terraform-aws-server
 ```
 
 Commit the changes in GitHub.
@@ -86,6 +86,8 @@ git push origin v0.0.1
 ## Task 4: Update Terraform Configuration to use Private Module source
 
 Update the `source` and `version` arguments on the module declaration in your `main.tf`
+
+> Note: Be sure to use the source URL for your private module organization.
 
 ```hcl
 module "server" {

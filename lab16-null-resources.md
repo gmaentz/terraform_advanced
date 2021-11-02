@@ -48,7 +48,7 @@ terraform {
 }
 ```
 
-> Note: Replace with your TFC Organization above and your intials in the `name` argument below
+> Note: Replace with your `organization` above and your intials in the `name` argument below where `###` are listed
 
 `sshkey.tf`
 
@@ -76,7 +76,7 @@ module "keypair" {
   source  = "mitchellh/dynamic-keys/aws"
   version = "2.0.0"
   path    = "${path.root}/keys"
-  name    = "appkey-ghm"
+  name    = "appkey-###"
 }
 
 output "key_name" {
@@ -95,6 +95,14 @@ terraform apply
 ```
 
 > Note: This may error on not finding AWS credentials which you will have to set in the `ssh-keys` workspace variables.
+
+Update the `aws_access_key`, `aws_secret_key` and `region` variables within the `ssh-keys` workspace.
+
+Once update rerun an apply.
+
+```shell
+terraform apply
+```
 
 ## Task 2: Update our Module to use our shared infrastructure key from the `ssh-keys` workspace
 
@@ -179,6 +187,15 @@ We are leveraging a technique to query shared remote state from another workspac
 ![Shared State Not Allowed](img/remote_state_disallowed.png)
 
 
-Go to the `shared-keys` workspace under the `Settings` > `General` and enable our `webserver-aws-dev` workspace to read our ssh keys output.
+Go to the `ssh-keys` workspace under the `Settings` > `General` and enable our `webserver-aws-dev` workspace to read our ssh keys output.
 
 ![Shared State Allowed](img/remote_state_allowed.png)
+
+
+Go back to the `web-server-dev` workspace and perform an `Actions > Start New Plan`
+
+![Deploy_App](img/null_resource_apply.png)
+
+Confirm and Apply the workspace and then browse to see you the new deployed application.
+
+![Web_App](img/web_app.png)

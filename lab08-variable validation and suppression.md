@@ -10,7 +10,7 @@ We may want to validate and possibly suppress and sensitive information defined 
 
 ## Task 1: Valdiate variables in the Server Module
 
-Update the `server_os` variable within the server module's `variables.tf` configuration file to include a validation block to check for approved operatins system types:
+Update the `server_os` variable within the server module's `variables.tf` configuration file to include a validation block to check for approved operating system types:
 
 ```hcl
 variable "server_os" {
@@ -27,7 +27,7 @@ variable "server_os" {
 
 Update the `server_os` variable in Terraform Cloud to list an approved server operating system and perform a `terraform plan`:
 
-![Approved Server OS](/course/img/server_os_approved.png)
+![Approved Server OS](./img/server_os_approved.png)
 
 
 ```bash
@@ -36,7 +36,7 @@ terraform plan
 
 Update the `server_os` variable in Terraform Cloud to list an approved server operating system and perform a `terraform plan`: 
 
-![Approved Server OS](/course/img/server_os_unapproved.png)
+![Approved Server OS](./img/server_os_unapproved.png)
 
 ```bash
 terraform plan
@@ -117,7 +117,7 @@ output "my_number" {
 
 ```hcl
 department = "ABC"
-cost_code  = "10-23"
+cost_code  = "1-3-4"
 ```
 
 Execute a `terraform apply` with the variables in the `terraform.auto.tfvars`.
@@ -159,7 +159,7 @@ terraform apply
 ```bash
 Outputs:
 
-cost_code = "10-23"
+cost_code = "1-3-4"
 department = "ABC"
 my_number = "867-5309"
 phone_number = <sensitive>
@@ -181,7 +181,7 @@ View the most current terraform state file on the `States` tab within Terraform 
   "lineage": "67c71c6f-af25-b300-2ea7-6d0f4b226b7b",
   "outputs": {
     "cost_code": {
-      "value": "10-23",
+      "value": "1-3-4",
       "type": "string"
     },
     "department": {

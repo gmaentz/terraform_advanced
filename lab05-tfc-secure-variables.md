@@ -16,7 +16,7 @@ This lab demonstrates how to store variables in Terraform Cloud.
 Now that we have our state stored in Terraform Cloud in our workspace, we will take the next logical step and store our sensitive variables into TFC as well.
 
 - In this step, we will be taking all of that variables and values that are stored locally in the `terraform.tfvars` file and migrating them up to Terraform Cloud.
-- The first thing you will need to do is navigate to your Terraform Cloud `Workstation` in the UI.
+- The first thing you will need to do is navigate to your Terraform Cloud `webserver-aws-dev` in the UI.
 - Once there, navigate to the `Variables` tab.
   - ![navigate to variables tab](./img/navigateVariables.png)
 - In the `Variables` tab, you can add variables related to the state file that was previously migrated.
@@ -32,7 +32,7 @@ Now that we have our state stored in Terraform Cloud in our workspace, we will t
     - Lastly, before saving, you must select the radial button that says `HCL` so that TFC knows how to properly interpolate the value of this variable
       - ![hcl variable](img/hclVariable.png)
 - After you've done all of this, your variables should look something like this:
-  ![](img/tfc_variables.png)
+  ![](img/Screen_Shot_2021-08-24_at_1.36.22_PM.png)
 
 ### Step 13.1.3 - Comment out your variables in `terraform.tfvars`
 
@@ -88,7 +88,7 @@ Next, we will be testing to make sure that our variables in TFC are working corr
 - Simply click on the `***` button to the right of your variables, and then select the `Edit` option
 - Change the value of your `identity` variable and save to apply a new name to your server.
 - Run a `terraform apply` locally in your code editor.
-- When this is ran locally, you should see that Terraform is looking at the variable in TFC, and it will update your server tags with the `indenity` value.
+- When this is ran locally, you should see that Terraform is looking at the variable in TFC, and it will update your server tags with the `indentity` value.
 
 ## Task 4: Run an apply remotely
 
